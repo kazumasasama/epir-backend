@@ -24,7 +24,8 @@ User.create!(
   address: "545 W 30th St",
   note: "This is a note for Kaz",
   birthday: "1984-10-24",
-  status: "System"
+  status: "System",
+  admin: true
 )
 
 date = Date.current
