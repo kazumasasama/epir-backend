@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_04_114958) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_171541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_114958) do
     t.decimal "lat"
     t.decimal "lon"
     t.boolean "admin", default: false
+    t.string "line_id"
   end
 
 end

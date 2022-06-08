@@ -5,33 +5,33 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Time.zone = 'Tokyo'
 
-Menu.create!(title: "VIO", duration: 60, price: 130, description: "Sensitive area")
-Menu.create!(title: "Arms", duration: 30, price: 100, description: "Both arms")
-Menu.create!(title: "Legs", duration: 90, price: 150, description: "Both legs")
+Menu.create!(title: "VIO", duration: 60, price: 13000, description: "Sensitive area")
+Menu.create!(title: "両腕", duration: 30, price: 10000, description: "Both arms")
+Menu.create!(title: "両脚", duration: 90, price: 15000, description: "Both legs")
 
 User.create!(
-  first_name: "Kaz",
-  last_name: "Takai",
+  first_name: "高井",
+  last_name: "一真",
   password: "password",
   email: "test@test.com",
-  phone: "347-695-5677",
-  gender: "N/A",
-  zip: 10001,
-  state: "NY",
-  city: "New York",
-  address: "545 W 30th St",
+  phone: "080-5132-1024",
+  gender: "男性",
+  zip: "491-0827",
+  state: "愛知県",
+  city: "一宮市",
+  address: "三ツ井7-11-2",
   note: "This is a note for Kaz",
   birthday: "1984-10-24",
   status: "System",
+  line_id: "test_1",
   admin: true
 )
 
 date = Date.current
 
 91.times do
-  start_time = Time.zone.parse("10:00:00")
+  start_time = Time.parse("05:00:00")
   # create slots for 10 hours each day
   20.times do
     BusinessTime.create!(
