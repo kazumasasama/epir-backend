@@ -3,13 +3,13 @@
 #
 # Examples:
 #
-  # movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-  # Character.create(name: "Luke", movie: movies.first)
+# movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+# Character.create(name: "Luke", movie: movies.first)
+Time.zone = "Asia/Tokyo"
 
 # Menu.create!(title: "VIO", duration: 60, price: 13000, description: "Sensitive area")
 # Menu.create!(title: "両腕", duration: 30, price: 10000, description: "Both arms")
 # Menu.create!(title: "両脚", duration: 90, price: 15000, description: "Both legs")
-Time.zone = "Asia/Tokyo"
 
 # User.create!(
 #   first_name: "高井",
@@ -29,7 +29,7 @@ Time.zone = "Asia/Tokyo"
 #   admin: true
 # )
 # User.create!(
-#   first_name: "ひらこば",
+#   first_name: "epiR",
 #   last_name: "づー",
 #   password: "password",
 #   email: "azu@test.com",
@@ -46,37 +46,37 @@ Time.zone = "Asia/Tokyo"
 #   admin: true
 # )
 
-# date = Date.current
+date = Date.current
 
-# 91.times do
-#   start_time = Time.parse("10:00:00")
-#   # create slots for 10 hours each day
-#   20.times do
-#     BusinessTime.create!(
-#       date: date,
-#       time: start_time,
-#       available: true
-#     )
-#     start_time += 1800.seconds # 30 min
-#   end
-#   date += 1
-# end
+91.times do
+  start_time = Time.zone.parse("10:00:00")
+  # create slots for 10 hours each day
+  20.times do
+    BusinessTime.create!(
+      date: date,
+      time: start_time,
+      available: true
+    )
+    start_time += 1800.seconds # 30 min
+  end
+  date += 1
+end
 
 
 # This file will be executed once a day at 12:00 AM by Heroku Scheduler
 # Comment out all seeds except BusinessTime below
 # =======================
 
-time_slot = 1800 # 30 min
-date = Date.current.since(90.days)
-start_time = Time.zone.parse("10:00:00")
-20.times do
-  BusinessTime.create!(
-    date: date,
-    time: start_time,
-    available: true
-  )
-  start_time += 1800.seconds # 30 min
-end
+# time_slot = 1800 # 30 min
+# date = Date.current.since(90.days)
+# start_time = Time.zone.parse("10:00:00")
+# 20.times do
+#   BusinessTime.create!(
+#     date: date,
+#     time: start_time,
+#     available: true
+#   )
+#   start_time += 1800.seconds # 30 min
+# end
 
 # =======================
