@@ -9,6 +9,7 @@
 # Menu.create!(title: "VIO", duration: 60, price: 13000, description: "Sensitive area")
 # Menu.create!(title: "両腕", duration: 30, price: 10000, description: "Both arms")
 # Menu.create!(title: "両脚", duration: 90, price: 15000, description: "Both legs")
+Time.zone = "Asia/Tokyo"
 
 # User.create!(
 #   first_name: "高井",
