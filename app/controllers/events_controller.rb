@@ -16,7 +16,6 @@ class EventsController < ApplicationController
   def create
     # create Event
     @new_event = Event.new(
-      date: params[:date],
       start: params[:start],
       end: params[:end],
       user_id: params[:user_id],
@@ -26,13 +25,15 @@ class EventsController < ApplicationController
     )
     if @new_event.save
       # update BusinessTime
-      business_times = BusinessTime.where(date: params[:date], time: params[:start]...params[:end])
+      start_time = params[:start]
+      end_time = params[:end]
+      business_times = BusinessTime.where(time: start_time...end_time)
       business_times.each do |business_time|
         business_time.available = false
         business_time.save
-        if !business_time.save
-          render json: {errors: business_time.errors.full_message}
-        end
+        # if !business_time.save
+        #   render json: {errors: business_time.errors.full_message}
+        # end
       end
       # create EventMenu
       menu_ids = params[:menus]

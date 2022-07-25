@@ -1,18 +1,14 @@
 @events.map do |event|
-  date = event.date.to_s
-  start_time = event.start.to_s.split(' ')[1].delete_suffix(":00")
-  event_start = "#{date} #{start_time}"
+  start_time = event.start.to_s.slice(0..15)
 
-  end_time = event.end.to_s.split(' ')[1].delete_suffix(":00")
-  event_end = "#{date} #{end_time}"
+  end_time = event.end.to_s.slice(0..15)
 
   user = event.user
 
   {
     id: event.id,
-    date: event.date,
-    start: event_start,
-    end: event_end,
+    start: start_time,
+    end: end_time,
     status: event.status,
     color: event.color,
     menus: event.menus,

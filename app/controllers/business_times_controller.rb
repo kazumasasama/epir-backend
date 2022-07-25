@@ -12,7 +12,6 @@ class BusinessTimesController < ApplicationController
 
   def create
     business_time = BusinessTime.new(
-      date: params[:date],
       time: params[:time],
       available: params[:available],
       event_id: params[:event_id]
@@ -26,7 +25,6 @@ class BusinessTimesController < ApplicationController
 
   def update
     business_time = BusinessTime.find(params[:id])
-    business_time.date = params[:date]
     business_time.time = params[:time]
     business_time.available = params[:available]
     business_time.event_id = params[:event_id]
