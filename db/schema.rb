@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_124107) do
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "time"
+    t.datetime "time"
   end
 
   create_table "event_menus", force: :cascade do |t|
@@ -37,8 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_124107) do
     t.integer "duration_total"
     t.string "status"
     t.string "color"
-    t.time "start"
-    t.time "end"
+    t.datetime "start"
+    t.datetime "end"
   end
 
   create_table "menus", force: :cascade do |t|

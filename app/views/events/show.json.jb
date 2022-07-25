@@ -1,13 +1,12 @@
-start_time = @event.start.to_s.split(' ')[1].delete_suffix(":00")
-event_start = "#{@event.date.to_s} #{start_time}"
-end_time = @event.end.to_s.split(' ')[1].delete_suffix(":00")
-event_end = "#{@event.date.to_s} #{end_time}"
+# start_time = @event.start.to_s.split(' ')[1].delete_suffix(":00")
+# event_start = "#{@event.date.to_s} #{start_time}"
+# end_time = @event.end.to_s.split(' ')[1].delete_suffix(":00")
+# event_end = "#{@event.date.to_s} #{end_time}"
 
 content = @event.menus.map{|menu| menu.title}
 
 {
   id: @event.id,
-  date: @event.date,
   start: @event.start,
   end: @event.end,
   status: @event.status,
